@@ -2,7 +2,7 @@
 [SPHINCS](https://sphincs.cr.yp.to/) is a recently proposed stateless hash-based signature scheme and
 promising candidate for a post-quantum secure digital signature scheme. This repository contains 
 optimized implementations of the cryptographic hash functions for both ARM and x86 which are used
-to instantiate SPHINCS with (for more details see the [paper](linktobeadded):
+to instantiate SPHINCS with (for more details see the [paper](linktobeadded)):
 
 * ChaCha12: The original proposal for SPHINCS.
 * [Haraka](https://github.com/kste/haraka): An AES-based short-input hash function.
