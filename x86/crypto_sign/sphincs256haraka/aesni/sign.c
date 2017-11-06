@@ -268,7 +268,9 @@ static void compute_authpath_wots(unsigned char root[HASH_BYTES], unsigned char 
 int crypto_sign_keypair(unsigned char *pk, unsigned char *sk)
 {
   leafaddr a;
-
+  
+  load_constants();
+  
   randombytes(sk,CRYPTO_SECRETKEYBYTES);
   memcpy(pk,sk+SEED_BYTES,N_MASKS*HASH_BYTES);
 
@@ -298,6 +300,8 @@ int crypto_sign(unsigned char *sm,unsigned long long *smlen, const unsigned char
   unsigned char *pk;
   unsigned char tsk[CRYPTO_SECRETKEYBYTES];
 
+  load_constants();
+  
   for(i=0;i<CRYPTO_SECRETKEYBYTES;i++)
     tsk[i] = sk[i];
 
@@ -417,7 +421,9 @@ int crypto_sign_open(unsigned char *m,unsigned long long *mlen, const unsigned c
     return -1;
 
   unsigned char m_h[MSGHASH_BYTES];
-
+  
+  load_constants();
+  
   for(i=0;i<CRYPTO_PUBLICKEYBYTES;i++)
     tpk[i] = pk[i];
 
